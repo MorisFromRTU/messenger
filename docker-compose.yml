@@ -14,6 +14,7 @@ services:
       - .:/app
     working_dir: /app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app
+
   alembic:
     build: .
     container_name: alembic_messenger_migrations
@@ -24,7 +25,7 @@ services:
     volumes:
       - .:/messenger
     working_dir: /messenger
-    command: ["sh", "-c"]  
+    command: alembic upgrade head  
 
   db:
     image: postgres:13

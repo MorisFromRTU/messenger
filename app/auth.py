@@ -64,8 +64,6 @@ async def register_user(user: schemas.UserRegister, db: AsyncSession = Depends(d
 
     user = database.User(
         username=user.username,
-        name=user.name,
-        surname=user.surname,
         email=user.email,
         password=hashed_password
     )

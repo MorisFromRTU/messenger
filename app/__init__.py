@@ -1,5 +1,5 @@
 from .logger import logging
-from .db import Base
+from app.db import Base
 
 __all__ = ["Base"]
 

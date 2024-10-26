@@ -1,8 +1,6 @@
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
-import database
-import database.models
-from .. import crud
+from .. import crud, database
 from fastapi import HTTPException, status
 
 async def get_users(db: AsyncSession) -> list:
